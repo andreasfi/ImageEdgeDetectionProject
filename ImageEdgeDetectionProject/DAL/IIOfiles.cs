@@ -10,7 +10,7 @@ namespace ImageEdgeDetectionProject
     interface IIOfiles
     {
         Bitmap loadFile(string path);
-        void saveFile(Bitmap image);
+        void saveFile(Bitmap image, string savepath);
 
     }
 }

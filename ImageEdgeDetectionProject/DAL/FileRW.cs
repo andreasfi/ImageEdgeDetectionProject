@@ -20,7 +20,7 @@ namespace ImageEdgeDetectionProject.BLL
             return image;
         }
 
-        public void saveFile(Bitmap image)
+        public void saveFile(Bitmap image, string savepath)
         {
             throw new NotImplementedException();
         }
