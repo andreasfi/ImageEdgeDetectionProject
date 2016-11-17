@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.addImage = new System.Windows.Forms.Button();
+            this.applyFilter = new System.Windows.Forms.Button();
+            this.saveImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,50 +45,51 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button1
+            // addImage
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 397);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add Picture";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.addImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addImage.Location = new System.Drawing.Point(12, 397);
+            this.addImage.Name = "addImage";
+            this.addImage.Size = new System.Drawing.Size(120, 50);
+            this.addImage.TabIndex = 4;
+            this.addImage.Text = "Add Image";
+            this.addImage.UseVisualStyleBackColor = false;
+            this.addImage.Click += new System.EventHandler(this.addImage_Click);
             // 
-            // button2
+            // applyFilter
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Info;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(179, 397);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 50);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Apply Filter";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.applyFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.applyFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.applyFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.applyFilter.Location = new System.Drawing.Point(177, 397);
+            this.applyFilter.Name = "applyFilter";
+            this.applyFilter.Size = new System.Drawing.Size(120, 50);
+            this.applyFilter.TabIndex = 5;
+            this.applyFilter.Text = "Apply Filter";
+            this.applyFilter.UseVisualStyleBackColor = false;
+            this.applyFilter.Click += new System.EventHandler(this.applyFilter_Click);
             // 
-            // button3
+            // saveImage
             // 
-            this.button3.BackColor = System.Drawing.Color.Turquoise;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(341, 397);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 50);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Save Image";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.saveImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.saveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveImage.Location = new System.Drawing.Point(341, 397);
+            this.saveImage.Name = "saveImage";
+            this.saveImage.Size = new System.Drawing.Size(120, 50);
+            this.saveImage.TabIndex = 6;
+            this.saveImage.Text = "Save Image";
+            this.saveImage.UseVisualStyleBackColor = false;
+            this.saveImage.Click += new System.EventHandler(this.saveImage_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 453);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.saveImage);
+            this.Controls.Add(this.applyFilter);
+            this.Controls.Add(this.addImage);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -100,8 +101,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addImage;
+        private System.Windows.Forms.Button applyFilter;
+        private System.Windows.Forms.Button saveImage;
     }
 }
