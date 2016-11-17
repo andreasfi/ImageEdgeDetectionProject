@@ -10,7 +10,7 @@ namespace ImageEdgeDetectionProject.BLL
     interface IImageDetection
     {
         Bitmap loadImage(string path);
-        void saveImage(Bitmap image);
+        void saveImage(Bitmap image, string savepath);
         Bitmap applyFilter(Bitmap image);
         
     }
