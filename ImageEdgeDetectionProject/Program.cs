@@ -12,6 +12,8 @@ namespace ImageEdgeDetectionProject
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+
+        //This is a Test
         static void Main()
         {
             Application.EnableVisualStyles();
