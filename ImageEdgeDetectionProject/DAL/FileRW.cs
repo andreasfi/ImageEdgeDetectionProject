@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,22 @@ namespace ImageEdgeDetectionProject.BLL
 
         public void saveFile(Bitmap image, string savepath)
         {
-            throw new NotImplementedException();
+            string fileExtension = Path.GetExtension(savepath).ToUpper();
+            ImageFormat imgFormat = ImageFormat.Png;
+
+            if (fileExtension == "BMP")
+            {
+                imgFormat = ImageFormat.Bmp;
+            }
+            else if (fileExtension == "JPG")
+            {
+                imgFormat = ImageFormat.Jpeg;
+            }
+
+            StreamWriter streamWriter = new StreamWriter(savepath, false);
+            image.Save(streamWriter.BaseStream, imgFormat);
+            streamWriter.Flush();
+            streamWriter.Close();
         }
 
 
