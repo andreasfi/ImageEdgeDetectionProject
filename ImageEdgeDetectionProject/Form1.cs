@@ -50,8 +50,10 @@ namespace ImageEdgeDetectionProject
             sfd.Title = "Specify a file name and file path";
             sfd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
             sfd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
-
-            anImageDetection.saveImage((Bitmap) pictureBox1.Image, sfd.FileName);
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                anImageDetection.saveImage((Bitmap)pictureBox1.Image, sfd.FileName);
+            }
         }
     }
 }
