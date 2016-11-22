@@ -51,7 +51,7 @@ namespace ImageEdgeDetectionProject
             sfd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
             sfd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
 
-            anImageDetection.saveImage((Bitmap) pictureBox1.Image);
+            anImageDetection.saveImage((Bitmap) pictureBox1.Image, sfd.FileName);
         }
     }
 }
