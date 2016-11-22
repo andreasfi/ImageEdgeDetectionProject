@@ -13,12 +13,14 @@ namespace ImageEdgeDetectionProject
 {
     public partial class Form1 : Form
     {
-        ImageDetection anImageDetection;
+        ImageManagement anImageDetection;
 
         public Form1()
         {
             InitializeComponent();
-            anImageDetection = new ImageDetection();
+            IImageDetection iid = new ImageDetection();
+            IIOfiles iiof = new FileRW();
+            anImageDetection = new ImageManagement(iiof ,iid);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -35,13 +37,13 @@ namespace ImageEdgeDetectionProject
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                pictureBox1.Image = anImageDetection.loadImage(ofd.FileName);
+                pictureBox1.Image = anImageDetection.GetImageFromPath(ofd.FileName);
             }
         }
 
         private void applyFilter_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = anImageDetection.applyFilter((Bitmap) pictureBox1.Image);
+            pictureBox1.Image = anImageDetection.applyTheFilter((Bitmap) pictureBox1.Image);
         }
 
         private void saveImage_Click(object sender, EventArgs e)
@@ -52,7 +54,7 @@ namespace ImageEdgeDetectionProject
             sfd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
             if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                anImageDetection.saveImage((Bitmap)pictureBox1.Image, sfd.FileName);
+                anImageDetection.SaveImageToPath((Bitmap)pictureBox1.Image, sfd.FileName);
             }
         }
     }
