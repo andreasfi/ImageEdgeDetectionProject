@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ImageEdgeDetectionProject.BLL
 {
-    interface IImageDetection
+    public interface IImageDetection
     {
         Bitmap loadImage(string path);
         void saveImage(Bitmap image, string savepath);

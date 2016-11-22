@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ImageEdgeDetectionProject
 {
-    interface IIOfiles
+    public interface IIOfiles
     {
         Bitmap loadFile(string path);
         void saveFile(Bitmap image, string savepath);
