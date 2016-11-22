@@ -27,9 +27,9 @@ namespace ImageEdgeDetectionProject.BLL
             return image;
         }
 
-        public void saveImage(Bitmap image)
+        public void saveImage(Bitmap image, string savepath)
         {
-            fileHandler.saveFile(image);
+            fileHandler.saveFile(image, savepath);
         }
     }
 }
