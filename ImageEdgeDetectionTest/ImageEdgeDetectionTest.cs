@@ -53,21 +53,23 @@ namespace ImageEdgeDetectionTest
 
         }
         [TestMethod]
-        [ExpectedException(typeof(NullReferenceException),
-        "Wrong file path")]
+        
         public void correctOutputTestWithException()
         {
             var testIOFiles = Substitute.For<IIOfiles>();
             var testIImageDetection = Substitute.For<IImageDetection>();
             ImageManagement im = new ImageManagement(testIOFiles, testIImageDetection);
 
-            //testIOFiles.saveFile(nullbitmap, "nopath");
-
+            /*
+            [ExpectedException(typeof(NullReferenceException),
+        "Wrong file path")]
+        */
 
             testIOFiles.When(x => x.saveFile(bitmap, "nopath"))
                 .Do(x => { throw new NullReferenceException(); });
             
             im.SaveImageToPath(bitmap, "nopath");
+            Assert.IsTrue(im.t);
         }
         [TestMethod]
         public void correctOutputTestWithoutException()

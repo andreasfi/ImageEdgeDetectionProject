@@ -30,14 +30,17 @@ namespace ImageEdgeDetectionProject
             }
             return image;
         }
+        public Boolean t;
         public void SaveImageToPath(Bitmap image, String path)
         {
+            t = false;
             try
             {
                 filerw.saveFile(image, path);
             } catch(NullReferenceException nre)
             {
-                throw new NullReferenceException();
+                //throw new NullReferenceException();
+                t = true;
             } 
             
         }
