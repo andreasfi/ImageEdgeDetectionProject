@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ImageEdgeDetectionProject
 {
     // This class is the class that should be tested
-    class ImageManagement
+    public class ImageManagement
     {
         readonly IIOfiles filerw;
         readonly IImageDetection imageDetection;
@@ -20,15 +20,36 @@ namespace ImageEdgeDetectionProject
         }
         public Bitmap GetImageFromPath(String path)
         {
-            return filerw.loadFile(path);
+            Bitmap image;
+            try
+            {
+                image = filerw.loadFile(path);
+            } catch (ArgumentException ae)
+            {
+                return null;
+            }
+            return image;
         }
         public void SaveImageToPath(Bitmap image, String path)
         {
-            filerw.saveFile(image, path);
+            try
+            {
+                filerw.saveFile(image, path);
+            } catch(NullReferenceException nre)
+            {
+                throw new NullReferenceException();
+            } 
+            
         }
         public Bitmap applyTheFilter(Bitmap image)
         {
-            return imageDetection.applyFilter(image);
+            try
+            {
+                return imageDetection.applyFilter(image);
+            } catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }

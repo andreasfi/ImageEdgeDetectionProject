@@ -15,18 +15,10 @@ namespace ImageEdgeDetectionProject.BLL
         public Bitmap loadFile(string path)
         {
             Bitmap image = null;
-            try
-            {
-                StreamReader streamReader = new StreamReader(path);
-                image = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
-                streamReader.Close();
-            }
-            catch (Exception e)
-            {
-                // logge
-            }
-
-                return image;
+            StreamReader streamReader = new StreamReader(path);
+            image = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
+            streamReader.Close();
+            return image;
         }
 
         public void saveFile(Bitmap image, string savepath)
