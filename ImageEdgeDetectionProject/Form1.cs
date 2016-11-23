@@ -15,6 +15,7 @@ namespace ImageEdgeDetectionProject
     {
         ImageManagement anImageDetection;
 
+        // initialization for the component from ImageDetection class
         public Form1()
         {
             InitializeComponent();
@@ -23,13 +24,16 @@ namespace ImageEdgeDetectionProject
             anImageDetection = new ImageManagement(iiof ,iid);
         }
 
+        // method to ...
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
+        // method - add an image file by clicking on a button
         private void addImage_Click(object sender, EventArgs e)
         {
+            // choosing the file from a pool of available extensions
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select an image file.";
             ofd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
@@ -41,11 +45,13 @@ namespace ImageEdgeDetectionProject
             }
         }
 
+        // method - apply a filter to the chosen image file
         private void applyFilter_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = anImageDetection.applyTheFilter((Bitmap) pictureBox1.Image);
         }
 
+        // method - save the filtered image in a chosen directory + file name/extension
         private void saveImage_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();

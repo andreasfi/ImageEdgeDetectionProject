@@ -8,13 +8,16 @@ using ImageEdgeDetectionTest.Properties;
 
 namespace ImageEdgeDetectionTest
 {
+    //this is the #3 test list via NSubstitute interface calls
     [TestClass]
     public class ImageEdgeDetectionTest
     {
         String path;
+
+        //given a string path this test verifies its initialization on an empty value
         Bitmap bitmap;
         Bitmap nullbitmap;
-       [TestInitialize]
+        [TestInitialize]
         public void TestInitialize()
         {
             path = "C:/Users/uadmin.SINFHES-M51AP8D/Source/Repos/ImageEdgeDetectionProject/ImageEdgeDetectionProject/ressources/notanimage.jpg";
@@ -22,6 +25,9 @@ namespace ImageEdgeDetectionTest
             bitmap = Resources.view;
             nullbitmap = null;
         }
+
+        //this test checks if the outcome of recalling a file through its path is true
+        //through the interface substitute call
         [TestMethod]
         public void correctInputTestWithException()
         {
@@ -67,7 +73,7 @@ namespace ImageEdgeDetectionTest
 
             testIOFiles.When(x => x.saveFile(bitmap, "nopath"))
                 .Do(x => { throw new NullReferenceException(); });
-            
+
             im.SaveImageToPath(bitmap, "nopath");
             Assert.IsTrue(im.t);
         }
@@ -84,9 +90,11 @@ namespace ImageEdgeDetectionTest
             im.SaveImageToPath(bitmap, "nopath");
 
             Assert.IsTrue(isok);
-            
-            
+
+
         }
+
+        //this test checks if the object path is properly pointing to the suggested root directory for the image when recalled
         [TestMethod]
         public void correctFilterTestWithException()
         {
