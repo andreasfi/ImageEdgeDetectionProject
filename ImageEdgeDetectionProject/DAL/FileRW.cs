@@ -17,18 +17,10 @@ namespace ImageEdgeDetectionProject.BLL
         public Bitmap loadFile(string path)
         {
             Bitmap image = null;
-            try
-            {
-                StreamReader streamReader = new StreamReader(path);
-                image = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
-                streamReader.Close();
-            }
-            catch (Exception e)
-            {
-                // logge
-            }
-
-                return image;
+            StreamReader streamReader = new StreamReader(path);
+            image = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
+            streamReader.Close();
+            return image;
         }
 
         // this setter method matches an image with its given path, where it gets stored
