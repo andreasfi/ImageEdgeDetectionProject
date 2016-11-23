@@ -6,15 +6,21 @@ using ImageEdgeDetectionProject.BLL;
 
 namespace ImageEdgeDetectionTest
 {
+    //this is the #3 test list via NSubstitute interface calls
     [TestClass]
     public class ImageEdgeDetectionTest
     {
         String path;
+
+        //given a string path this test verifies its initialization on an empty value
         [TestInitialize]
         public void TestInitialize()
         {
             path = "";
         }
+
+        //this test checks if the outcome of recalling a file through its path is true
+        //through the interface substitute call
         [TestMethod]
         public void correctInputTestWithException()
         {
@@ -31,6 +37,8 @@ namespace ImageEdgeDetectionTest
             Assert.AreEqual(frw, true);
 
         }
+
+        //this test checks if the object path is properly pointing to the suggested root directory for the image when recalled
         [TestMethod]
         public void correctInputTest2()
         {

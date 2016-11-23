@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 
 namespace ImageEdgeDetectionProject.BLL
 {
+    //This is the main class for the DAL-Data Access Layer part of the program
     public class FileRW : IIOfiles
     {
-
+        // this getter method initializes an empty image, pushes it into StreamReader object with points to a path
+        //then it returns it
         public Bitmap loadFile(string path)
         {
             Bitmap image = null;
@@ -29,6 +31,9 @@ namespace ImageEdgeDetectionProject.BLL
                 return image;
         }
 
+        // this setter method matches an image with its given path, where it gets stored
+        // it also detects and specifies the exact extension of the image to be saved
+        // the image is saven after being pushed trhough a StreamWriter object
         public void saveFile(Bitmap image, string savepath)
         {
             string fileExtension = Path.GetExtension(savepath).ToUpper();
@@ -56,7 +61,5 @@ namespace ImageEdgeDetectionProject.BLL
             }
             
         }
-
-
     }
 }
