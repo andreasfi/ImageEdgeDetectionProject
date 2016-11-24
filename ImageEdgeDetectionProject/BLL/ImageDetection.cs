@@ -10,15 +10,13 @@ using System.Threading.Tasks;
 
 namespace ImageEdgeDetectionProject
 {
-    //This is the main class for the BLL-Business Layer Logic part of the program
+    //This is the implementation of the Interface IImagedetecteion
     public class ImageDetection : IImageDetection
     {
-        public IIOfiles fileHandler;
 
-        //creation of a file handler from Class FileRW
+        //instanciation of a file handler from Class FileRW
         public ImageDetection()
         {
-            fileHandler = new FileRW();
         }
 
         //this is the getter method for the image convolution filter rendering
@@ -33,18 +31,6 @@ namespace ImageEdgeDetectionProject
             return resultBitmap;
         }
 
-        // this getter method retrieves and loads the image from a given path 
-        public Bitmap loadImage(string path)
-        {
-            Bitmap image = fileHandler.loadFile(path);
-            return image;
-        }
-
-        //this setter method saves the filtered image to specific path
-        public void saveImage(Bitmap image, string savepath)
-        {
-            fileHandler.saveFile(image, savepath);
-        }
 
         // this is the setter method for the convolution rendering filter with grayscale modulation
         private static Bitmap ConvolutionFilter(Bitmap sourceBitmap,
