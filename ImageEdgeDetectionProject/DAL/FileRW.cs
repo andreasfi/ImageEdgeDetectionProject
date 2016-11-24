@@ -13,6 +13,7 @@ namespace ImageEdgeDetectionProject.BLL
     public class FileRW : IIOfiles
     {
         // this getter method initializes an empty image, pushes it into StreamReader object with points to a path
+        // to load the image
         //then it returns it
         public Bitmap loadFile(string path)
         {
@@ -23,7 +24,7 @@ namespace ImageEdgeDetectionProject.BLL
             return image;
         }
 
-        // this setter method matches an image with its given path, where it gets stored
+        // this method matches an image with its given path, where it gets written
         // it also detects and specifies the exact extension of the image to be saved
         // the image is saven after being pushed trhough a StreamWriter object
         public void saveFile(Bitmap image, string savepath)
@@ -40,18 +41,11 @@ namespace ImageEdgeDetectionProject.BLL
                 imgFormat = ImageFormat.Jpeg;
             }
 
-            try
-            {
-                StreamWriter streamWriter = new StreamWriter(savepath, false);
-                image.Save(streamWriter.BaseStream, imgFormat);
-                streamWriter.Flush();
-                streamWriter.Close();
-            }
-            catch (Exception e)
-            {
-                // logge
-            }
-            
+            StreamWriter streamWriter = new StreamWriter(savepath, false);
+            image.Save(streamWriter.BaseStream, imgFormat);
+            streamWriter.Flush();
+            streamWriter.Close();
+
         }
     }
 }

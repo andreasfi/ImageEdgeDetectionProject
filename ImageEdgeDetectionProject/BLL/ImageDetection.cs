@@ -13,12 +13,10 @@ namespace ImageEdgeDetectionProject
     //This is the implementation of the Interface IImagedetecteion
     public class ImageDetection : IImageDetection
     {
-        public IIOfiles fileHandler;
 
         //instanciation of a file handler from Class FileRW
         public ImageDetection()
         {
-            fileHandler = new FileRW();
         }
 
         //this is the getter method for the image convolution filter rendering

@@ -23,11 +23,10 @@ namespace ImageEdgeDetectionProject
             IIOfiles iiof = new FileRW();
             anImageDetection = new ImageManagement(iiof ,iid);
         }
-
-        // method to ...
+        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            // Need to be here for the frame to work
         }
 
         // method - add an image file by clicking on a button

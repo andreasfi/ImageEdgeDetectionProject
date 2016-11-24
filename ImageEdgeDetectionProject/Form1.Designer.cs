@@ -39,7 +39,7 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(24, 23);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(896, 708);
             this.pictureBox1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.addImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.addImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addImage.Location = new System.Drawing.Point(12, 397);
+            this.addImage.Location = new System.Drawing.Point(24, 740);
             this.addImage.Name = "addImage";
             this.addImage.Size = new System.Drawing.Size(120, 50);
             this.addImage.TabIndex = 4;
@@ -63,7 +63,7 @@
             this.applyFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.applyFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.applyFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.applyFilter.Location = new System.Drawing.Point(177, 397);
+            this.applyFilter.Location = new System.Drawing.Point(165, 740);
             this.applyFilter.Name = "applyFilter";
             this.applyFilter.Size = new System.Drawing.Size(120, 50);
             this.applyFilter.TabIndex = 5;
@@ -75,7 +75,7 @@
             // 
             this.saveImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.saveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveImage.Location = new System.Drawing.Point(341, 397);
+            this.saveImage.Location = new System.Drawing.Point(307, 740);
             this.saveImage.Name = "saveImage";
             this.saveImage.Size = new System.Drawing.Size(120, 50);
             this.saveImage.TabIndex = 6;
@@ -87,12 +87,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 453);
+            this.ClientSize = new System.Drawing.Size(941, 799);
             this.Controls.Add(this.saveImage);
             this.Controls.Add(this.applyFilter);
             this.Controls.Add(this.addImage);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
